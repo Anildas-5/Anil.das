@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Scooty Purchase Form</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 60%;
+            margin: 50px auto;
+            background-color: #ffffff;
+            padding: 30px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            border-radius: 12px;
+            border: 2px solid #28a745;
+        }
+        h2 {
+            text-align: center;
+            color: #4CAF50;
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #333;
+            font-size: 16px;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        textarea {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+            transition: border-color 0.3s ease;
+        }
+        input[type="file"] {
+            border: none;
+            font-size: 16px;
+        }
+        input:focus, textarea:focus {
+            border-color: #28a745;
+            outline: none;
+        }
+        button {
+            width: 100%;
+            padding: 15px;
+            background-color: #28a745;
+            color: white;
+            font-size: 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .form-group textarea {
+            resize: vertical;
+        }
+        .file-upload {
+            background-color: #f7f7f7;
+            padding: 10px;
+            border: 1px dashed #ccc;
+            border-radius: 8px;
+            text-align: center;
+        }
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #888;
+        }
+    </style>
+    <script>
+        function orderPlaced(event) {
+            event.preventDefault(); // Prevent the form from submitting
+            alert("Your order is placed and our executive will be in touch with you!");
+            // Here you can also redirect the user to a new page or reset the form
+            document.getElementById("purchaseForm").reset(); // Optional: resets the form after submission
+        }
+    </script>
+</head>
+<body>
+
+    <div class="container">
+        <h2>E-Scooty Purchase Form</h2>
+        <form id="purchaseForm" action="#" method="post" enctype="multipart/form-data" onsubmit="orderPlaced(event)">
+            <!-- First Name -->
+            <div class="form-group">
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="firstName" required>
+            </div>
+            
+            <!-- Last Name -->
+            <div class="form-group">
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="lastName" required>
+            </div>
+            
+            <!-- Phone Number -->
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            
+            <!-- Email ID -->
+            <div class="form-group">
+                <label for="email">Email ID:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <!-- Permanent Address -->
+            <div class="form-group">
+                <label for="permAddress">Permanent Address:</label>
+                <textarea id="permAddress" name="permAddress" rows="4" required></textarea>
+            </div>
+            
+            <!-- Aadhaar Card Photo -->
+            <div class="form-group file-upload">
+                <label for="aadhaar">Upload Aadhaar Card Photo:</label>
+                <input type="file" id="aadhaar" name="aadhaar" accept="image/*" required>
+            </div>
+            <div class="form-group file-upload">
+                <label for="aadhaar">Upload Driving  Photo:</label>
+                <input type="file" id="aadhaar" name="aadhaar" accept="image/*" required>
+            </div>
+
+            <!-- Address Proof Photo -->
+            <div class="form-group file-upload">
+                <label for="addressProof">Upload Address Proof:</label>
+                <input type="file" id="addressProof" name="addressProof" accept="image/*" required>
+            </div>
+
+            <!-- Delivery Address -->
+            <div class="form-group">
+                <label for="deliveryAddress">Delivery Address:</label>
+                <textarea id="deliveryAddress" name="deliveryAddress" rows="4" required></textarea>
+            </div>
+
+            <!-- Additional Details -->
+            <div class="form-group">
+                <label for="additionalDetails">Additional Details:</label>
+                <textarea id="additionalDetails" name="additionalDetails" rows="4"></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit">Order Placed</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>Thank you for choosing us for your e-scooty purchase!</p>
+    </footer>
+
+</body>
+</html>
